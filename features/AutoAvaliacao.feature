@@ -2,7 +2,14 @@ Feature: Self Evaluation
     As a student logged in the system
     I want to be able to grade myself over the course criterions
 
-    Scenario: Self Grading
+    Scenario: Successful Self Grading
     Given I am a student in the "Grades" page
     And I have not graded myself over the criterion "Configure Management"
-    Then a blank space should appear bellow the criterion "Configure Management""
+    Then a blank space should appear bellow the criterion "Configure Management"
+
+    Scenario: Unsuccessful Self Grading
+    Given I am a student in the "Grades" page
+    And my professor gave me a "MANA" grade for the "Configure Management" criterion
+    When I try to attribute a "MA" grade for the "Configure Management"criterion
+    Then I am not able to register the grade
+    And the message "You cannot assign a grate greater than the one your teacher gave you" appears
