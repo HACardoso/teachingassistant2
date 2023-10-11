@@ -13,3 +13,5 @@ Feature: Self Evaluation
     When I try to attribute a "MA" grade for the "Configure Management"criterion
     Then I am not able to register the grade
     And the message "You cannot assign a grate greater than the one your teacher gave you" appears
+    And a popup appears to alert the user
+    And a button "ok" is displayed to return to the grading page
