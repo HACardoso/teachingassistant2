@@ -13,6 +13,8 @@ Feature: Self Evaluation
     When I try to attribute a "MA" grade for the "Configure Management"criterion
     Then I am not able to register the grade
     And the message "You cannot assign a grate greater than the one your teacher gave you" appears
+    And I am redirected to de grading page
+    And the grades "MA" assigned to the criterion "Configure Management" is removed
 
     Scenario: Grade Consolidation
     Given I am a student in the "Grades page
