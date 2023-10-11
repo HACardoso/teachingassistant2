@@ -5,7 +5,10 @@ Feature: Self Evaluation
     Scenario: Successful Self Grading
     Given I am a student in the "Grades" page
     And I have not graded myself over the criterion "Configure Management"
-    Then a blank space should appear bellow the criterion "Configure Management"
+    And a blank space appear bellow the criterion "Configure Management"
+    When I attribute the grade "MPA" to the criterion "Configure Management"
+    And the grade "MPA" is not better than the grade assigned by the teacher
+    The the grade "MPA" is registered as a sel evaluation grade to the criterion "Configure Management"
 
     Scenario: Unsuccessful Self Grading
     Given I am a student in the "Grades" page
