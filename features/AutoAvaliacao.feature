@@ -15,3 +15,11 @@ Feature: Self Evaluation
     And the message "You cannot assign a grate greater than the one your teacher gave you" appears
     And a popup appears to alert the user
     And a button "ok" is displayed to return to the grading page
+
+    Scenario: Grade Consolidation
+    Given I am a student in the "Grades page
+    And I have the "Configure Management" criterion to assign a grade
+    When I assign a grade to the "Configure Management" criterion
+    And It is successfully added
+    And I do not have other criterion to assign Grades
+    Then the professor is able to consolidate the grades
