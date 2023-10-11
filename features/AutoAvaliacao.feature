@@ -15,6 +15,8 @@ Feature: Self Evaluation
     And the message "You cannot assign a grate greater than the one your teacher gave you" appears
     And a popup appears to alert the user
     And a button "ok" is displayed to return to the grading page
+    And I am redirected to de grading page
+    And the grades "MA" assigned to the criterion "Configure Management" is removed
 
     Scenario: Grade Consolidation
     Given I am a student in the "Grades page
